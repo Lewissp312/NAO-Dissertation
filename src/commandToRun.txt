@@ -1,0 +1,6 @@
+clang++ -std=c++11\
+  -I/Users/lewisspencer/programming-languages/naoqi-sdk-2.8.5.10-mac64/include -I/usr/local/include \
+  -L/Users/lewisspencer/programming-languages/naoqi-sdk-2.8.5.10-mac64/lib -L/usr/local/lib \
+  -Wl,-rpath,/Users/lewisspencer/programming-languages/naoqi-sdk-2.8.5.10-mac64/lib \
+  -lqi -lalcommon -lalerror -lalproxies -lalvalue -lboost_system -lboost_thread -lzmq \
+  -o build/main src/main.cpp src/NaoConnection.cpp; open build/main;
