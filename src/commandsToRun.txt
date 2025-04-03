@@ -1,0 +1,16 @@
+Move to the NAO_dissertation_code directory first
+
+Command to run main.cpp:
+clang++ -std=c++14\
+  -I/Users/lewisspencer/programming-languages/naoqi-sdk-2.8.5.10-mac64/include -I/usr/local/include \
+  -L/Users/lewisspencer/programming-languages/naoqi-sdk-2.8.5.10-mac64/lib -L/usr/local/lib \
+  -Wl,-rpath,/Users/lewisspencer/programming-languages/naoqi-sdk-2.8.5.10-mac64/lib \
+  -lqi -lalcommon -lalerror -lalproxies -lalvalue -lboost_system -lboost_thread -lzmq -lopencv_core -lopencv_highgui -lopencv_imgcodecs \
+  -o build/main src/main.cpp src/NaoConnection.cpp; open build/main;
+
+Command to run PictureEnhancement.cpp:
+  clang++ -std=c++17\
+    -I/usr/local/include -I/usr/local/Cellar/pytorch/2.5.1_4/libexec/lib/python3.13/site-packages/torch/include -I/usr/local/Cellar/pytorch/2.5.1_4/libexec/lib/python3.13/site-packages/torch/include/torch/csrc/api/include \
+    -L/usr/local/lib -L/usr/local/Cellar/pytorch/2.5.1_4/libexec/lib/python3.13/site-packages/torch/lib \
+    -lboost_system -lboost_thread -lopencv_core -lopencv_highgui -lopencv_imgcodecs -ltorch -lc10 \
+    -o build/pictureEnhancement src/PictureEnhancement.cpp; open build/pictureEnhancement;
